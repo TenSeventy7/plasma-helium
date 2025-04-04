@@ -800,9 +800,9 @@ int Style::pixelMetric(PixelMetric metric, const QStyleOption *option, const QWi
     }
 
     case PM_LayoutHorizontalSpacing:
-        return Metrics::Layout_DefaultSpacing;
+        return Metrics::Layout_DefaultSpacingHorizontal;
     case PM_LayoutVerticalSpacing:
-        return Metrics::Layout_DefaultSpacing;
+        return Metrics::Layout_DefaultSpacingVertical;
 
     // buttons
     case PM_ButtonMargin: {

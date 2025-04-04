@@ -27,7 +27,8 @@ static qreal Frame_FrameRadius = 3; // set in Helper::loadConfig
 // layout
 static constexpr int Layout_TopLevelMarginWidth = 10;
 static constexpr int Layout_ChildMarginWidth = 7;
-static constexpr int Layout_DefaultSpacing = 8;
+static constexpr int Layout_DefaultSpacingVertical = 10;
+static constexpr int Layout_DefaultSpacingHorizontal = 8;
 
 // line editors
 static constexpr int LineEdit_FrameWidth = 7;
