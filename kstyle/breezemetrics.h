@@ -26,23 +26,23 @@ static qreal Frame_FrameRadius = 3; // set in Helper::loadConfig
 
 // layout
 static constexpr int Layout_TopLevelMarginWidth = 10;
-static constexpr int Layout_ChildMarginWidth = 6;
-static constexpr int Layout_DefaultSpacing = 6;
+static constexpr int Layout_ChildMarginWidth = 7;
+static constexpr int Layout_DefaultSpacing = 8;
 
 // line editors
-static constexpr int LineEdit_FrameWidth = 6;
+static constexpr int LineEdit_FrameWidth = 7;
 
 // menu items
 static constexpr int Menu_FrameWidth = 0;
-static constexpr int MenuItem_MarginWidth = 5;
+static constexpr int MenuItem_MarginWidth = 7;
 static constexpr int MenuItem_HighlightGap = 4;
 static constexpr int MenuItem_ExtraLeftMargin = 4;
-static constexpr int MenuItem_MarginHeight = 3;
-static constexpr int MenuItem_ItemSpacing = 4;
-static constexpr int MenuItem_AcceleratorSpace = 16;
+static constexpr int MenuItem_MarginHeight = 5;
+static constexpr int MenuItem_ItemSpacing = 6;
+static constexpr int MenuItem_AcceleratorSpace = 8;
 
 // combobox
-static constexpr int ComboBox_FrameWidth = 6;
+static constexpr int ComboBox_FrameWidth = 7;
 
 // spinbox
 static constexpr int SpinBox_FrameWidth = LineEdit_FrameWidth;
@@ -53,11 +53,11 @@ static constexpr int GroupBox_TitleMarginWidth = 4;
 
 // buttons
 static constexpr int Button_MinWidth = 80;
-static constexpr int Button_MarginWidth = 6;
+static constexpr int Button_MarginWidth = 7;
 static constexpr int Button_ItemSpacing = 4;
 
 // tool buttons
-static constexpr int ToolButton_MarginWidth = 6;
+static constexpr int ToolButton_MarginWidth = 7;
 static constexpr int ToolButton_ItemSpacing = 4;
 static constexpr int ToolButton_InlineIndicatorWidth = 12;
 
@@ -72,7 +72,7 @@ static qreal CheckBox_Radius = qMax(0.0, Frame_FrameRadius - 1); // set in Helpe
 
 // menubar items
 static constexpr int MenuBarItem_MarginWidth = 10;
-static constexpr int MenuBarItem_MarginHeight = 6;
+static constexpr int MenuBarItem_MarginHeight = 7;
 
 // scrollbars
 static int const &ScrollBar_TopBottomMargins = StyleConfigData::scrollBarTopBottomMargins();
@@ -89,16 +89,16 @@ static int const &ScrollBar_DoubleButtonHeight = 2 * ScrollBar_Extend + ScrollBa
 // toolbars
 static constexpr int ToolBar_FrameWidth = 0;
 static constexpr int ToolBar_HandleExtent = 10;
-static constexpr int ToolBar_HandleWidth = 6;
+static constexpr int ToolBar_HandleWidth = 7;
 static constexpr int ToolBar_SeparatorWidth = 8;
 static constexpr int ToolBar_ExtensionWidth = 20;
-static constexpr int ToolBar_ItemMargin = 6;
+static constexpr int ToolBar_ItemMargin = 7;
 static constexpr int ToolBar_ItemSpacing = 0;
 static constexpr int ToolBar_SeparatorVerticalMargin = 2;
 
 // progressbars
 static constexpr int ProgressBar_BusyIndicatorSize = 14;
-static constexpr int ProgressBar_Thickness = 6;
+static constexpr int ProgressBar_Thickness = 8;
 static constexpr int ProgressBar_ItemSpacing = 4;
 
 // mdi title bar
@@ -107,7 +107,7 @@ static constexpr int TitleBar_MarginWidth = 4;
 // sliders
 static constexpr int Slider_TickLength = 8;
 static constexpr int Slider_TickMarginWidth = 2;
-static constexpr int Slider_GrooveThickness = 6;
+static constexpr int Slider_GrooveThickness = 8;
 static constexpr int Slider_ControlThickness = 20;
 
 // tabbar
@@ -133,7 +133,7 @@ static constexpr int ToolBox_TabMarginWidth = 8;
 static constexpr int ToolTip_FrameWidth = 3;
 
 // list headers
-static constexpr int Header_MarginWidth = 6;
+static constexpr int Header_MarginWidth = 7;
 static constexpr int Header_ItemSpacing = 4;
 static constexpr int Header_ArrowSize = ArrowSize;
 
@@ -146,7 +146,7 @@ static constexpr int SidePanel_ItemMarginWidth = 4;
 static constexpr int Splitter_SplitterWidth = 1;
 
 // shadow dimensions
-static constexpr int Shadow_Overlap = 2;
+static constexpr int Shadow_Overlap = 1;
 
 // frame intensities (called bias in KColorUtilities::Mix)
 // Keep this value in sync with Kirigami  PlatformTheme::frameContrast()
