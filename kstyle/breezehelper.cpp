@@ -666,7 +666,7 @@ QRegion Helper::menuFrameRegion(const QMenu *widget)
     if (roundCorners) {
         QRectF frameRect(widget->rect());
 
-        qreal radius(Metrics::Frame_FrameRadius);
+        qreal radius(Metrics::Frame_FrameRadius+4);
 
         frameRect.adjust( //
             seamlessEdges.testFlag(Qt::LeftEdge) ? -radius : 0,
