@@ -25,7 +25,7 @@ static constexpr int Frame_FrameWidth = 2;
 static qreal Frame_FrameRadius = 3; // set in Helper::loadConfig
 
 // layout
-static constexpr int Layout_TopLevelMarginWidth = 10;
+static constexpr int Layout_TopLevelMarginWidth = 12;
 static constexpr int Layout_ChildMarginWidth = 7;
 static constexpr int Layout_DefaultSpacingVertical = 10;
 static constexpr int Layout_DefaultSpacingHorizontal = 8;
@@ -34,16 +34,16 @@ static constexpr int Layout_DefaultSpacingHorizontal = 8;
 static constexpr int LineEdit_FrameWidth = 7;
 
 // menu items
-static constexpr int Menu_FrameWidth = 0;
-static constexpr int MenuItem_MarginWidth = 7;
+static constexpr int Menu_FrameWidth = 2;
+static constexpr int MenuItem_MarginWidth = 6;
 static constexpr int MenuItem_HighlightGap = 4;
-static constexpr int MenuItem_ExtraLeftMargin = 4;
+static constexpr int MenuItem_ExtraLeftMargin = 8;
 static constexpr int MenuItem_MarginHeight = 5;
-static constexpr int MenuItem_ItemSpacing = 6;
-static constexpr int MenuItem_AcceleratorSpace = 8;
+static constexpr int MenuItem_ItemSpacing = 5;
+static constexpr int MenuItem_AcceleratorSpace = 4;
 
 // combobox
-static constexpr int ComboBox_FrameWidth = 7;
+static constexpr int ComboBox_FrameWidth = LineEdit_FrameWidth;
 
 // spinbox
 static constexpr int SpinBox_FrameWidth = LineEdit_FrameWidth;
@@ -54,11 +54,11 @@ static constexpr int GroupBox_TitleMarginWidth = 4;
 
 // buttons
 static constexpr int Button_MinWidth = 80;
-static constexpr int Button_MarginWidth = 7;
+static constexpr int Button_MarginWidth = LineEdit_FrameWidth;
 static constexpr int Button_ItemSpacing = 4;
 
 // tool buttons
-static constexpr int ToolButton_MarginWidth = 7;
+static constexpr int ToolButton_MarginWidth = Button_MarginWidth;
 static constexpr int ToolButton_ItemSpacing = 4;
 static constexpr int ToolButton_InlineIndicatorWidth = 12;
 
@@ -94,7 +94,7 @@ static constexpr int ToolBar_HandleWidth = 7;
 static constexpr int ToolBar_SeparatorWidth = 8;
 static constexpr int ToolBar_ExtensionWidth = 20;
 static constexpr int ToolBar_ItemMargin = 7;
-static constexpr int ToolBar_ItemSpacing = 0;
+static constexpr int ToolBar_ItemSpacing = 2;
 static constexpr int ToolBar_SeparatorVerticalMargin = 2;
 
 // progressbars
@@ -116,7 +116,7 @@ static constexpr int TabBar_TabMarginHeight = 4;
 static constexpr int TabBar_TabMarginWidth = 8;
 static constexpr int TabBar_TabMinWidth = 80;
 static constexpr int TabBar_TabMinHeight = 30;
-static constexpr int TabBar_StaticTabMinHeight = 34;
+static constexpr int TabBar_StaticTabMinHeight = 38;
 static constexpr int TabBar_TabItemSpacing = 8;
 static constexpr int TabBar_TabOverlap = 1;
 static constexpr int TabBar_BaseOverlap = 2;
