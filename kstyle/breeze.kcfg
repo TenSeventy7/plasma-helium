@@ -13,11 +13,11 @@
           <choice name="FCR_DerivedFromWindow" />
           <choice name="FCR_Custom" />
       </choices>
-      <default>FCR_DerivedFromWindow</default>
+      <default>FCR_Custom</default>
     </entry>
 
     <entry name="FrameCustomCornerRadius" type="Double">
-      <default>3.0</default>
+      <default>6.0</default>
       <min>0</min>
       <max>24.0</max>
     </entry>
@@ -228,7 +228,7 @@
 
     <!-- transparency -->
     <entry name="MenuOpacity" type="Int">
-        <default>100</default>
+        <default>65</default>
     </entry>
 
   </group>
