@@ -42,6 +42,354 @@ const QVector<DefaultExceptionData> hardcodedExceptions =
         "",                 // exceptionPreset
         false               // hideTitleBar
     },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "systemsettings",                       // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD",                      // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.discover",                     // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kclock",                       // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.filelight",                    // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kfind",                        // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kweather",                     // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kjournaldbrowser",             // propertyPattern
+        "kjournaldbrowser",                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "kinfocenter",                          // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.partitionmanager",             // propertyPattern
+        "partitionmanager",                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header Blur",                   // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.plasma-systemmonitor",         // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.konsole",                      // propertyPattern
+        "konsole",                              // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD Blur",                 // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.merkuro.*",                    // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD",                      // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "kcm_notifications",                    // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kamoso",                       // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD",                      // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.elisa",                        // propertyPattern
+        "elisa",                                // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.krecorder",                    // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD",                      // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.krdc",                         // propertyPattern
+        "krdc",                                 // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD Blur",                 // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.okular",                       // propertyPattern
+        "okular",                               // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header Blur",                   // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.khelpcenter",                  // propertyPattern
+        "khelpcenter",                          // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        false,                                  // exceptionBorder (Note: this one is false)
+        "Helium Faux-CSD Blur",                 // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.plasma-welcome",               // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD",                      // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.gwenview",                     // propertyPattern
+        "gwenview",                             // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD Blur",                 // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kolourpaint",                  // propertyPattern
+        "kolourpaint",                          // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD",                      // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.dolphin",                      // propertyPattern
+        "dolphin",                              // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header Blur",                   // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kmenuedit",                    // propertyPattern
+        "kmenuedit",                            // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD Blur",                 // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kwrite",                       // propertyPattern
+        "kwrite",                               // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD Blur",                 // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.skanpage",                     // propertyPattern
+        "skanpage",                             // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Faux-CSD",                      // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.ark",                          // propertyPattern
+        "ark",                                  // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header Blur",                   // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.spectacle",                    // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    },
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName, // propertyType (0)
+        "org.kde.kalk",                         // propertyPattern
+        "",                                     // programNamePattern
+        false,                                  // opaqueTitleBar
+        false,                                  // preventApplyOpacityToHeader
+        0,                                      // borderSize
+        true,                                   // enabled
+        true,                                   // exceptionBorder
+        "Helium Header",                        // exceptionPreset
+        false                                   // hideTitleBar
+    }
 };
 
 //______________________________________________________________
