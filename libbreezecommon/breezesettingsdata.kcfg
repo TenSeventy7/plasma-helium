@@ -26,7 +26,7 @@
           <choice name="StyleMetro" />
           <choice name="StyleFluent" />
       </choices>
-      <default>StyleKisweet</default>
+      <default>StyleMetro</default>
     </entry>
 
     <!-- button size -->
@@ -43,7 +43,7 @@
           <choice name="IconGiant" />
           <choice name="IconHumongous" />
       </choices>
-      <default>IconLargeMedium</default>
+      <default>IconMedium</default>
     </entry>
 
     <!-- system icon size -->
@@ -75,7 +75,7 @@
           <choice name="BoldIconsFine" />
           <choice name="BoldIconsHiDpiOnly" />
       </choices>
-      <default>BoldIconsFine</default>
+      <default>BoldIconsHiDpiOnly</default>
     </entry>
 
     <!-- button background shape -->
@@ -89,7 +89,7 @@
           <choice name="ShapeSmallSquare" />
           <choice name="ShapeSmallRoundedSquare" />
       </choices>
-      <default>ShapeIntegratedRoundedRectangle</default>
+      <default>ShapeSmallCircle</default>
     </entry>
 
     <!-- ______________________________TITLEBAR______________________________ -->
@@ -106,13 +106,13 @@
     <!-- ______________________________WINDOW______________________________ -->
     
     <entry name="WindowCornerRadius" type = "Double">
-       <default>2.5</default>
+       <default>8</default>
        <min>0</min>
        <max>24.0</max>
     </entry>
     
    <entry name="RoundBottomCornersWhenNoBorders" type = "Bool">
-        <default>false</default>
+        <default>true</default>
     </entry>
 
     <entry name="UseTitleBarColorForAllBorders" type = "Bool">
@@ -124,7 +124,7 @@
     </entry>
 
     <entry name="ColorizeThinWindowOutlineWithButton" type = "Bool">
-        <default>true</default>
+        <default>false</default>
     </entry>
 
     <!-- ______________________________ANIMATIONS______________________________ -->
@@ -158,21 +158,21 @@
   <group name="ButtonSizing">
     <!-- Scale for small buttons -->
     <entry name="ScaleBackgroundPercent" type = "Int">
-       <default>100</default>
+       <default>125</default>
        <min>100</min>
        <max>250</max>
     </entry>
 
     <!-- left button spacing for non-full-height buttons-->
     <entry name="ButtonSpacingLeft" type = "Int">
-       <default>3</default>
+       <default>4</default>
        <min>0</min>
        <max>50</max>
     </entry>
 
     <!-- right button spacing for non-full-height buttons-->
     <entry name="ButtonSpacingRight" type = "Int">
-       <default>5</default>
+       <default>6</default>
        <min>0</min>
        <max>50</max>
     </entry>
@@ -190,7 +190,7 @@
 
     <!-- Full-height button width margin right -->
     <entry name="FullHeightButtonWidthMarginRight" type = "Int">
-       <default>9</default>
+       <default>4</default>
        <min>0</min>
        <max>50</max>
     </entry>
@@ -202,7 +202,7 @@
     </entry>
 
     <entry name="LockFullHeightButtonWidthMargins" type = "Bool">
-        <default>false</default>
+        <default>true</default>
     </entry>
 
     <!-- left button spacing for full-height buttons-->
@@ -262,7 +262,7 @@
     <!-- button icon colors -->
 
     <entry name="LockButtonColorsActiveInactive" type = "Bool">
-        <default>false</default>
+        <default>true</default>
     </entry>
 
     <entry name="ButtonIconColors$(ButtonIconColorsActive)" type="Enum">
@@ -279,7 +279,7 @@
             <choice name="AccentNegativeClose" />
             <choice name="AccentTrafficLights" />
         </choices>
-        <default param="Active">AccentTrafficLights</default>
+        <default param="Active">TitleBarText</default>
         <default param="Inactive">TitleBarText</default>
     </entry>
 
@@ -297,7 +297,7 @@
             <choice name="White" />
             <choice name="WhiteWhenHoverPress" />
         </choices>
-        <default>WhiteWhenHoverPress</default>
+        <default>AsSelected</default>
     </entry>
 
     <entry name="OnPoorIconContrast$(OnPoorIconContrastActive)" type = "Enum">
@@ -341,7 +341,7 @@
             <choice name="AccentNegativeClose" />
             <choice name="AccentTrafficLights" />
         </choices>
-        <default>AccentTrafficLights</default>
+        <default>TitleBarTextNegativeClose</default>
     </entry>
 
     <entry name="NegativeCloseBackgroundHoverPress$(NegativeCloseBackgroundHoverPressActive)" type = "Bool">
@@ -406,7 +406,8 @@
                 <value>Active</value>
             </values>
         </parameter>
-        <default>60</default>
+        <default param="Inactive">60</default>
+        <default param="Active">75</default>
         <min>0</min>
         <max>100</max>
     </entry>
@@ -821,13 +822,13 @@
 
   <group name="TitleBarSpacing">
     <entry name="TitleBarTopMargin" type = "Double">
-       <default>2</default>
+       <default>4</default>
        <min>0</min>
        <max>25</max>
     </entry>
 
     <entry name="TitleBarBottomMargin" type = "Double">
-       <default>2</default>
+       <default>4</default>
        <min>0</min>
        <max>25</max>
     </entry>
@@ -837,13 +838,13 @@
     </entry>
 
     <entry name="TitleBarLeftMargin" type = "Int">
-       <default>0</default>
+       <default>5</default>
        <min>0</min>
        <max>30</max>
     </entry>
 
     <entry name="TitleBarRightMargin" type = "Int">
-       <default>0</default>
+       <default>5</default>
        <min>0</min>
        <max>30</max>
     </entry>
@@ -937,13 +938,12 @@
             <choice name="WindowOutlineCustomColor" />
             <choice name="WindowOutlineCustomWithContrast" />
         </choices>
-        <default param ="Active">WindowOutlineAccentColor</default>
-        <default param ="Inactive">WindowOutlineContrast</default>
+        <default>WindowOutlineNone</default>
     </entry>
 
 
     <entry name="LockThinWindowOutlineStyleActiveInactive" type = "Bool">
-        <default>false</default>
+        <default>true</default>
     </entry>
 
     <entry name="ThinWindowOutlineCustomColor$(ThinWindowOutlineCustomColorActive)" type = "Color">
@@ -1040,7 +1040,7 @@
 
   <group name="ShadowStyle">
     <entry name="ShadowStrength" type = "Int">
-    <default>255</default>
+    <default>204</default>
     <min>25</min>
     <max>255</max>
     </entry>
