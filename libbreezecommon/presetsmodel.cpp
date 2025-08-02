@@ -268,10 +268,10 @@ void PresetsModel::exportPreset(KConfig *presetsConfig, const QString &presetNam
         return;
 
     KConfigGroup inputPresetGroup = presetsConfig->group(groupName);
-    KConfigGroup outputGlobalGroup = outputPresetConfig->group("Klassy Window Decoration Preset File");
+    KConfigGroup outputGlobalGroup = outputPresetConfig->group("Helium Window Decoration Preset File");
     KConfigGroup outputPresetGroup = outputPresetConfig->group(groupName);
 
-    outputGlobalGroup.writeEntry("version", klassyLongVersion());
+    outputGlobalGroup.writeEntry("version", heliumLongVersion());
 
     auto internalSettings = InternalSettingsPtr(new InternalSettings());
 
@@ -302,11 +302,11 @@ PresetsModel::importPreset(KConfig *presetsConfig, const QString &filePath, QStr
         return PresetsErrorFlag::InvalidGlobalGroup;
 
     // perform validation first
-    if (!(importPresetConfig->hasGroup("Klassy Window Decoration Preset File")))
+    if (!(importPresetConfig->hasGroup("Helium Window Decoration Preset File")))
         return PresetsErrorFlag::InvalidGlobalGroup;
-    KConfigGroup importGlobalGroup = importPresetConfig->group("Klassy Window Decoration Preset File");
+    KConfigGroup importGlobalGroup = importPresetConfig->group("Helium Window Decoration Preset File");
     QString importVersion = importGlobalGroup.readEntry("version");
-    bool versionValid = (importVersion == klassyLongVersion());
+    bool versionValid = (importVersion == heliumLongVersion());
     if (!versionValid && !forceInvalidVersion)
         return PresetsErrorFlag::InvalidVersion;
 
@@ -366,14 +366,14 @@ bool PresetsModel::isKeyValid(const QString &key)
     return false;
 }
 
-// copies bundled presets in /usr/lib64/qt6/plugins/org.kde.kdecoration3.kcm/klassydecoration/presets into ~/.config/klassy/klassyrc once per release
+// copies bundled presets in /usr/lib64/qt6/plugins/org.kde.kdecoration3.kcm/heliumdecoration/presets into ~/.config/helium/heliumrc once per release
 void PresetsModel::importBundledPresets(KConfig *presetsConfig)
 {
     // don't copy if BundledWindecoPresetsImportedVersion has been set for the current release version
     if (presetsConfig->hasGroup("Global")) {
         KConfigGroup globalGroup = presetsConfig->group("Global");
         if (globalGroup.hasKey("BundledWindecoPresetsImportedVersion")) {
-            if (globalGroup.readEntry("BundledWindecoPresetsImportedVersion") == klassyLongVersion()) {
+            if (globalGroup.readEntry("BundledWindecoPresetsImportedVersion") == heliumLongVersion()) {
                 return;
             }
         }
@@ -386,11 +386,11 @@ void PresetsModel::importBundledPresets(KConfig *presetsConfig)
     PresetsModel::deleteBundledPresets(presetsConfig);
 
     for (QString libraryPath : QCoreApplication::libraryPaths()) {
-        libraryPath += "/org.kde.kdecoration3.kcm/klassydecoration/presets";
+        libraryPath += "/org.kde.kdecoration3.kcm/heliumdecoration/presets";
         QDir presetsDir(libraryPath);
         if (presetsDir.exists()) {
             QStringList filters;
-            filters << "*.klpw";
+            filters << "*.helium-deco";
             presetsDir.setNameFilters(filters);
             QStringList presetFiles = presetsDir.entryList();
 
@@ -408,7 +408,7 @@ void PresetsModel::importBundledPresets(KConfig *presetsConfig)
     }
 
     KConfigGroup globalGroup = presetsConfig->group("Global");
-    globalGroup.writeEntry("BundledWindecoPresetsImportedVersion", klassyLongVersion());
+    globalGroup.writeEntry("BundledWindecoPresetsImportedVersion", heliumLongVersion());
     presetsConfig->sync();
 }
 }

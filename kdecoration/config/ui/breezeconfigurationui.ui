@@ -560,7 +560,7 @@
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>:/klassy_config_icons/Klassy.png</normaloff>:/klassy_config_icons/Klassy.png</iconset>
+                <normaloff>:/helium_config_icons/Klassy.png</normaloff>:/helium_config_icons/Klassy.png</iconset>
               </property>
              </item>
              <item>
@@ -569,7 +569,7 @@
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>:/klassy_config_icons/Kite.png</normaloff>:/klassy_config_icons/Kite.png</iconset>
+                <normaloff>:/helium_config_icons/Kite.png</normaloff>:/helium_config_icons/Kite.png</iconset>
               </property>
              </item>
              <item>
@@ -578,7 +578,7 @@
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>:/klassy_config_icons/Oxygen.png</normaloff>:/klassy_config_icons/Oxygen.png</iconset>
+                <normaloff>:/helium_config_icons/Oxygen.png</normaloff>:/helium_config_icons/Oxygen.png</iconset>
               </property>
              </item>
              <item>
@@ -587,7 +587,7 @@
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>:/klassy_config_icons/Redmond.png</normaloff>:/klassy_config_icons/Redmond.png</iconset>
+                <normaloff>:/helium_config_icons/Redmond.png</normaloff>:/helium_config_icons/Redmond.png</iconset>
               </property>
              </item>
              <item>
@@ -596,7 +596,7 @@
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>:/klassy_config_icons/Redmond10.png</normaloff>:/klassy_config_icons/Redmond10.png</iconset>
+                <normaloff>:/helium_config_icons/Redmond10.png</normaloff>:/helium_config_icons/Redmond10.png</iconset>
               </property>
              </item>
              <item>
@@ -731,7 +731,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/paulmcauley/klassy&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/TenSeventy7/plasma-helium&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
@@ -874,7 +874,7 @@
               </spacer>
              </item>
              <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
-              <widget class="QGraphicsView" name="klassy_logo">
+              <widget class="QGraphicsView" name="helium_logo">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -903,7 +903,7 @@
                 <enum>Qt::LayoutDirection::LeftToRight</enum>
                </property>
                <property name="styleSheet">
-                <string notr="true">border-image: url(:/klassy_config_icons/Klassy_logo.svg);</string>
+                <string notr="true">border-image: url(:/helium_config_icons/Klassy_logo.svg);</string>
                </property>
                <property name="interactive">
                 <bool>false</bool>
@@ -1667,10 +1667,10 @@
   <tabstop>shadowStyleButton</tabstop>
   <tabstop>animationsEnabled</tabstop>
   <tabstop>animationsSpeedRelativeSystem</tabstop>
-  <tabstop>klassy_logo</tabstop>
+  <tabstop>helium_logo</tabstop>
  </tabstops>
  <resources>
-  <include location="klassydecoration_config.qrc"/>
+  <include location="heliumdecoration_config.qrc"/>
  </resources>
  <connections/>
 </ui>

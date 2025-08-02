@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=helium-settings %f
+TryExec=helium-settings
+Name=Helium Style Settings
+Icon=helium-settings
+Categories=Settings

@@ -26,8 +26,8 @@ DBusUpdateNotifier::DBusUpdateNotifier()
         SLOT(onSystemSettingUpdate(QString, QString, QDBusVariant)));
 
     dBusConnection.connect(QString(),
-                           QStringLiteral("/KlassyDecoration"),
-                           QStringLiteral("org.kde.Klassy.Style"),
+                           QStringLiteral("/HeliumDecoration"),
+                           QStringLiteral("org.kde.Helium.Style"),
                            QStringLiteral("updateDecorationColorCache"),
                            this,
                            SLOT(onWindowDecorationSettingsUpdate()));

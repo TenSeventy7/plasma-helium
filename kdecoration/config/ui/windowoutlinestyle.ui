@@ -987,9 +987,9 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="klassydecoration_config.qrc">
-                  <normaloff>:/klassy_config_icons/object-unlocked-symbolic.svg</normaloff>
-                  <normalon>:/klassy_config_icons/object-locked-symbolic.svg</normalon>:/klassy_config_icons/object-unlocked-symbolic.svg</iconset>
+                 <iconset resource="heliumdecoration_config.qrc">
+                  <normaloff>:/helium_config_icons/object-unlocked-symbolic.svg</normaloff>
+                  <normalon>:/helium_config_icons/object-locked-symbolic.svg</normalon>:/helium_config_icons/object-unlocked-symbolic.svg</iconset>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -1125,9 +1125,9 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="klassydecoration_config.qrc">
-                  <normaloff>:/klassy_config_icons/object-unlocked-symbolic.svg</normaloff>
-                  <normalon>:/klassy_config_icons/object-locked-symbolic.svg</normalon>:/klassy_config_icons/object-unlocked-symbolic.svg</iconset>
+                 <iconset resource="heliumdecoration_config.qrc">
+                  <normaloff>:/helium_config_icons/object-unlocked-symbolic.svg</normaloff>
+                  <normalon>:/helium_config_icons/object-locked-symbolic.svg</normalon>:/helium_config_icons/object-unlocked-symbolic.svg</iconset>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -2178,9 +2178,9 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="klassydecoration_config.qrc">
-                  <normaloff>:/klassy_config_icons/object-unlocked-symbolic.svg</normaloff>
-                  <normalon>:/klassy_config_icons/object-locked-symbolic.svg</normalon>:/klassy_config_icons/object-unlocked-symbolic.svg</iconset>
+                 <iconset resource="heliumdecoration_config.qrc">
+                  <normaloff>:/helium_config_icons/object-unlocked-symbolic.svg</normaloff>
+                  <normalon>:/helium_config_icons/object-locked-symbolic.svg</normalon>:/helium_config_icons/object-unlocked-symbolic.svg</iconset>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -2332,9 +2332,9 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="klassydecoration_config.qrc">
-                  <normaloff>:/klassy_config_icons/object-unlocked-symbolic.svg</normaloff>
-                  <normalon>:/klassy_config_icons/object-locked-symbolic.svg</normalon>:/klassy_config_icons/object-unlocked-symbolic.svg</iconset>
+                 <iconset resource="heliumdecoration_config.qrc">
+                  <normaloff>:/helium_config_icons/object-unlocked-symbolic.svg</normaloff>
+                  <normalon>:/helium_config_icons/object-locked-symbolic.svg</normalon>:/helium_config_icons/object-unlocked-symbolic.svg</iconset>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>
@@ -2536,7 +2536,7 @@
   <tabstop>windowOutlineCustomWithContrastOpacityInactive_2</tabstop>
  </tabstops>
  <resources>
-  <include location="klassydecoration_config.qrc"/>
+  <include location="heliumdecoration_config.qrc"/>
  </resources>
  <connections>
   <connection>

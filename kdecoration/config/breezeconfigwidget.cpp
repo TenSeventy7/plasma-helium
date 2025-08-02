@@ -24,18 +24,18 @@
 #include <QTimer>
 #include <QWindow>
 
-void initKlassydecorationConfigQrc()
+void initHeliumdecorationConfigQrc()
 {
     // needed to display images when qrc is statically linked
     // must be in global namespace to work
-    Q_INIT_RESOURCE(klassydecoration_config);
+    Q_INIT_RESOURCE(heliumdecoration_config);
 }
 
-void cleanupKlassydecorationConfigQrc()
+void cleanupHeliumdecorationConfigQrc()
 {
     // needed to free qrc resources
     // must be in global namespace to work
-    Q_CLEANUP_RESOURCE(klassydecoration_config);
+    Q_CLEANUP_RESOURCE(heliumdecoration_config);
 }
 
 namespace Breeze
@@ -44,20 +44,20 @@ namespace Breeze
 //_________________________________________________________
 ConfigWidget::ConfigWidget(QObject *parent, const KPluginMetaData &data, const QVariantList & /*args*/)
     : KCModule(parent, data)
-    , m_configuration(KSharedConfig::openConfig(QStringLiteral("klassy/klassyrc")))
-    , m_presetsConfiguration(KSharedConfig::openConfig(QStringLiteral("klassy/windecopresetsrc")))
+    , m_configuration(KSharedConfig::openConfig(QStringLiteral("helium/heliumrc")))
+    , m_presetsConfiguration(KSharedConfig::openConfig(QStringLiteral("helium/windecopresetsrc")))
     , m_changed(false)
 {
     // this is a hack to get an Apply button
     if (widget() && QCoreApplication::applicationName() == QStringLiteral("systemsettings")) {
-        system("kcmshell6 org.kde.kdecoration3.kcm/kcm_klassydecoration.so &");
+        system("kcmshell6 org.kde.kdecoration3.kcm/kcm_heliumdecoration.so &");
         if (widget()->window()) {
             widget()->window()->close();
         }
     }
     setButtons(KCModule::Default | KCModule::Apply);
 
-    initKlassydecorationConfigQrc();
+    initHeliumdecorationConfigQrc();
 
     // configuration
     m_ui.setupUi(widget());
@@ -76,8 +76,8 @@ ConfigWidget::ConfigWidget(QObject *parent, const KPluginMetaData &data, const Q
 
     widget()->setTabOrder(m_presetsButton, m_ui.tabWidget);
 
-    // hide the title if not klassy-settings
-    if (widget()->window() && qAppName() != "klassy-settings") {
+    // hide the title if not helium-settings
+    if (widget()->window() && qAppName() != "helium-settings") {
         m_kPageWidget = widget()->window()->findChild<KPageWidget *>();
         if (m_kPageWidget) {
             KPageWidgetItem *currentPage = m_kPageWidget->currentPage();
@@ -97,8 +97,8 @@ ConfigWidget::ConfigWidget(QObject *parent, const KPluginMetaData &data, const Q
         defaultPushButton->hide();
     }
 
-    m_unlockedIcon.addFile(QStringLiteral(":/klassy_config_icons/object-unlocked-symbolic.svg"), QSize(16, 16));
-    m_lockedIcon.addFile(QStringLiteral(":/klassy_config_icons/object-locked-symbolic.svg"), QSize(16, 16));
+    m_unlockedIcon.addFile(QStringLiteral(":/helium_config_icons/object-unlocked-symbolic.svg"), QSize(16, 16));
+    m_lockedIcon.addFile(QStringLiteral(":/helium_config_icons/object-locked-symbolic.svg"), QSize(16, 16));
     // add corner icon
     m_ui.cornerRadiusIcon->setPixmap(QIcon::fromTheme(QStringLiteral("tool_curve")).pixmap(16, 16));
 
@@ -128,14 +128,14 @@ ConfigWidget::ConfigWidget(QObject *parent, const KPluginMetaData &data, const Q
     // update the horizontal header icons in-case the icon style has changed
     connect(this, &ConfigWidget::saved, m_buttonColorsDialog, &ButtonColors::load);
 
-#if KLASSY_GIT_MASTER
+#if HELIUM_GIT_MASTER
     // set the long version string if from the git master
-    m_ui.version->setText("v" + klassyLongVersion());
+    m_ui.version->setText("v" + heliumLongVersion());
 
 #else
     // set shortened version string in UI if an official release
     QRegularExpression re("\\d+\\.\\d+");
-    QRegularExpressionMatch match = re.match(KLASSY_VERSION);
+    QRegularExpressionMatch match = re.match(HELIUM_VERSION);
     if (match.hasMatch()) {
         QString matched = match.captured(0);
         m_ui.version->setText("v" + matched);
@@ -188,7 +188,7 @@ ConfigWidget::ConfigWidget(QObject *parent, const KPluginMetaData &data, const Q
 
 ConfigWidget::~ConfigWidget()
 {
-    cleanupKlassydecorationConfigQrc();
+    cleanupHeliumdecorationConfigQrc();
 }
 
 //_________________________________________________________
@@ -319,7 +319,7 @@ void ConfigWidget::saveMain(QString saveAsPresetName)
     // not needed as both of the other DBUS messages also update KStyle
     // DBusMessages::kstyleReloadDecorationConfig();
 
-    // auto-generate the klassy and klassy-dark system icons
+    // auto-generate the helium and helium-dark system icons
     generateSystemIcons();
 }
 
@@ -543,52 +543,52 @@ void ConfigWidget::buttonSizingButtonClicked()
 
 void ConfigWidget::buttonColorsButtonClicked()
 {
-    m_buttonColorsDialog->setWindowTitle(i18n("Button Colours - Klassy Settings"));
+    m_buttonColorsDialog->setWindowTitle(i18n("Button Colours - Helium Settings"));
     m_buttonColorsDialog->setWindowIcon(QIcon::fromTheme(QStringLiteral("color-management")));
     m_buttonColorsDialog->show();
 }
 
 void ConfigWidget::buttonBehaviourButtonClicked()
 {
-    m_buttonBehaviourDialog->setWindowTitle(i18n("Button Behaviour - Klassy Settings"));
+    m_buttonBehaviourDialog->setWindowTitle(i18n("Button Behaviour - Helium Settings"));
     m_buttonBehaviourDialog->show();
 }
 
 void ConfigWidget::titleBarSpacingButtonClicked()
 {
-    m_titleBarSpacingDialog->setWindowTitle(i18n("Titlebar Spacing - Klassy Settings"));
+    m_titleBarSpacingDialog->setWindowTitle(i18n("Titlebar Spacing - Helium Settings"));
     m_titleBarSpacingDialog->show();
 }
 
 void ConfigWidget::titleBarOpacityButtonClicked()
 {
-    m_titleBarOpacityDialog->setWindowTitle(i18n("Titlebar Opacity - Klassy Settings"));
+    m_titleBarOpacityDialog->setWindowTitle(i18n("Titlebar Opacity - Helium Settings"));
     m_titleBarOpacityDialog->show();
 }
 
 void ConfigWidget::shadowStyleButtonClicked()
 {
-    m_shadowStyleDialog->setWindowTitle(i18n("Shadow Style - Klassy Settings"));
+    m_shadowStyleDialog->setWindowTitle(i18n("Shadow Style - Helium Settings"));
     m_shadowStyleDialog->show();
 }
 
 void ConfigWidget::windowOutlineStyleButtonClicked()
 {
-    m_windowOutlineStyleDialog->setWindowTitle(i18n("Window Outline Style - Klassy Settings"));
+    m_windowOutlineStyleDialog->setWindowTitle(i18n("Window Outline Style - Helium Settings"));
     m_windowOutlineStyleDialog->show();
 }
 
 void ConfigWidget::presetsButtonClicked()
 {
-    m_loadPresetDialog->setWindowTitle(i18n("Presets - Klassy Settings"));
+    m_loadPresetDialog->setWindowTitle(i18n("Presets - Helium Settings"));
     m_loadPresetDialog->initPresetsList();
     m_loadPresetDialog->show();
 }
 
 void ConfigWidget::generateSystemIcons()
 {
-    // auto-generate the klassy and klassy-dark system icons in a separate process
-    system("klassy-settings -g &");
+    // auto-generate the helium and helium-dark system icons in a separate process
+    system("helium-settings -g &");
 }
 
 void ConfigWidget::updateIcons()
@@ -597,31 +597,31 @@ void ConfigWidget::updateIcons()
 
     QIcon icon;
 
-    icon = QIcon(QStringLiteral(":/klassy_config_icons/full_height_rectangle.svg"));
+    icon = QIcon(QStringLiteral(":/helium_config_icons/full_height_rectangle.svg"));
     ColorTools::convertAlphaToColor(icon, sizeSixteen, QApplication::palette().windowText().color());
     m_ui.buttonShape->setItemIcon(0, icon);
 
-    icon = QIcon(QStringLiteral(":/klassy_config_icons/full_height_rounded_rectangle.svg"));
+    icon = QIcon(QStringLiteral(":/helium_config_icons/full_height_rounded_rectangle.svg"));
     ColorTools::convertAlphaToColor(icon, sizeSixteen, QApplication::palette().windowText().color());
     m_ui.buttonShape->setItemIcon(1, icon);
 
-    icon = QIcon(QStringLiteral(":/klassy_config_icons/integrated_rounded_rectangle.svg"));
+    icon = QIcon(QStringLiteral(":/helium_config_icons/integrated_rounded_rectangle.svg"));
     ColorTools::convertAlphaToColor(icon, sizeSixteen, QApplication::palette().windowText().color());
     m_ui.buttonShape->setItemIcon(2, icon);
 
-    icon = QIcon(QStringLiteral(":/klassy_config_icons/integrated_rounded_rectangle_grouped.svg"));
+    icon = QIcon(QStringLiteral(":/helium_config_icons/integrated_rounded_rectangle_grouped.svg"));
     ColorTools::convertAlphaToColor(icon, sizeSixteen, QApplication::palette().windowText().color());
     m_ui.buttonShape->setItemIcon(3, icon);
 
-    icon = QIcon(QStringLiteral(":/klassy_config_icons/circle.svg"));
+    icon = QIcon(QStringLiteral(":/helium_config_icons/circle.svg"));
     ColorTools::convertAlphaToColor(icon, sizeSixteen, QApplication::palette().windowText().color());
     m_ui.buttonShape->setItemIcon(4, icon);
 
-    icon = QIcon(QStringLiteral(":/klassy_config_icons/square.svg"));
+    icon = QIcon(QStringLiteral(":/helium_config_icons/square.svg"));
     ColorTools::convertAlphaToColor(icon, sizeSixteen, QApplication::palette().windowText().color());
     m_ui.buttonShape->setItemIcon(5, icon);
 
-    icon = QIcon(QStringLiteral(":/klassy_config_icons/rounded_square.svg"));
+    icon = QIcon(QStringLiteral(":/helium_config_icons/rounded_square.svg"));
     ColorTools::convertAlphaToColor(icon, sizeSixteen, QApplication::palette().windowText().color());
     m_ui.buttonShape->setItemIcon(6, icon);
 

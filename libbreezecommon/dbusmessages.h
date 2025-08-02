@@ -26,21 +26,21 @@ public:
     {
         // needed for klassy application style to reload shadows
         QDBusMessage message(
-            QDBusMessage::createSignal(QStringLiteral("/KlassyDecoration"), QStringLiteral("org.kde.Klassy.Style"), QStringLiteral("reparseConfiguration")));
+            QDBusMessage::createSignal(QStringLiteral("/HeliumDecoration"), QStringLiteral("org.kde.Helium.Style"), QStringLiteral("reparseConfiguration")));
         QDBusConnection::sessionBus().send(message);
     }
 
     static void kstyleReloadConfig()
     {
         QDBusMessage message(
-            QDBusMessage::createSignal(QStringLiteral("/KlassyStyle"), QStringLiteral("org.kde.Klassy.Style"), QStringLiteral("reparseConfiguration")));
+            QDBusMessage::createSignal(QStringLiteral("/HeliumStyle"), QStringLiteral("org.kde.Helium.Style"), QStringLiteral("reparseConfiguration")));
         QDBusConnection::sessionBus().send(message);
     }
 
     static void updateDecorationColorCache()
     {
-        QDBusMessage message(QDBusMessage::createSignal(QStringLiteral("/KlassyDecoration"),
-                                                        QStringLiteral("org.kde.Klassy.Style"),
+        QDBusMessage message(QDBusMessage::createSignal(QStringLiteral("/HeliumDecoration"),
+                                                        QStringLiteral("org.kde.Helium.Style"),
                                                         QStringLiteral("updateDecorationColorCache")));
         QDBusConnection::sessionBus().send(message);
     }

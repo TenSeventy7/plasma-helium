@@ -1,6 +1,4 @@
-install(FILES KlassyDark.colors
+install(FILES HeliumDark.colors
         DESTINATION ${KDE_INSTALL_DATADIR}/color-schemes/)
-install(FILES KlassyLight.colors
-        DESTINATION ${KDE_INSTALL_DATADIR}/color-schemes/)
-install(FILES KlassyTwilight.colors
+install(FILES HeliumLight.colors
         DESTINATION ${KDE_INSTALL_DATADIR}/color-schemes/)

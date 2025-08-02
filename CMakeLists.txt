@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
-project(klassy)
+project(helium)
 set(PROJECT_VERSION "6.4")
 set(PROJECT_VERSION_MAJOR 6)
 
-add_definitions( -DKLASSY_VERSION="${PROJECT_VERSION}" -DKLASSY_GIT_MASTER=0)
+add_definitions( -DHELIUM_VERSION="${PROJECT_VERSION}" -DHELIUM_GIT_MASTER=0)
 
 set(KF5_MIN_VERSION "5.102.0")
 set(KF6_MIN_VERSION "6.10.0")
@@ -114,7 +114,7 @@ function(build_Qt6)
         find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
         set(HAVE_QTDBUS ${Qt6DBus_FOUND})
 
-        option(WITH_DECORATIONS "Build Klassy window decorations for KWin" ON)
+        option(WITH_DECORATIONS "Build Helium window decorations for KWin" ON)
 
         find_package(KF6FrameworkIntegration ${KF6_MIN_VERSION} CONFIG )
         set_package_properties(KF${QT_MAJOR_VERSION}FrameworkIntegration PROPERTIES
@@ -168,9 +168,6 @@ function(build_Qt6)
         find_package(KDecoration3 REQUIRED)
         add_subdirectory(kdecoration)
         add_subdirectory(icons)
-        add_subdirectory(layout-templates)
-        add_subdirectory(look-and-feel)
-        add_subdirectory(desktoptheme)
     endif()
 
     ki18n_install(po)
@@ -178,17 +175,17 @@ function(build_Qt6)
     # create a Config.cmake and a ConfigVersion.cmake file and install them
     include(ECMSetupVersion)
     ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX BREEZE
-        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfigVersion.cmake"
+        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/HeliumConfigVersion.cmake"
     )
-    set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/Klassy")
+    set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/Helium")
 
-    configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KlassyConfig.cmake.in"
-                                  "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfig.cmake"
+    configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/HeliumConfig.cmake.in"
+                                  "${CMAKE_CURRENT_BINARY_DIR}/HeliumConfig.cmake"
                                   PATH_VARS KDE_INSTALL_FULL_DATADIR
                                   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
-    install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfig.cmake"
-                   "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfigVersion.cmake"
+    install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/HeliumConfig.cmake"
+                   "${CMAKE_CURRENT_BINARY_DIR}/HeliumConfigVersion.cmake"
             DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
             COMPONENT Devel
     )

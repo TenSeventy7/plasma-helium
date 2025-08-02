@@ -296,8 +296,8 @@ Style::Style()
     // use DBus connection to update on breeze configuration change
     auto dbus = QDBusConnection::sessionBus();
     dbus.connect(QString(),
-                 QStringLiteral("/KlassyStyle"),
-                 QStringLiteral("org.kde.Klassy.Style"),
+                 QStringLiteral("/HeliumStyle"),
+                 QStringLiteral("org.kde.Helium.Style"),
                  QStringLiteral("reparseConfiguration"),
                  this,
                  SLOT(configurationChanged()));
@@ -2198,7 +2198,7 @@ bool Style::eventFilterScrollBar(QScrollBar *scrollBar, QEvent *event)
                     }
                 }
 
-                scrollBar->setProperty("_klassySliderClickOffset", clickOffset);
+                scrollBar->setProperty("_heliumSliderClickOffset", clickOffset);
             }
         }
 
@@ -2213,13 +2213,13 @@ bool Style::eventFilterScrollBar(QScrollBar *scrollBar, QEvent *event)
             // modified from https://github.com/qt/qtbase/blob/dev/src/widgets/widgets/qscrollbar.cpp for Klassy
             int newSliderPosition = scrollBarPixelPosToRangeValue(scrollBar,
                                                                   (scrollBar->orientation() == Qt::Orientation::Horizontal ? click.x() : click.y())
-                                                                      - scrollBar->property("_klassySliderClickOffset").toInt());
+                                                                      - scrollBar->property("_heliumSliderClickOffset").toInt());
             scrollBar->setSliderPosition(newSliderPosition);
             event->setAccepted(true);
             return true;
 
         } else if (event->type() == QEvent::MouseButtonRelease) {
-            scrollBar->setProperty("_klassySliderClickOffset", QVariant());
+            scrollBar->setProperty("_heliumSliderClickOffset", QVariant());
         }
     }
     return false;
@@ -8262,7 +8262,7 @@ bool Style::drawDialComplexControl(const QStyleOptionComplex *option, QPainter *
 bool Style::drawScrollBarComplexControl(const QStyleOptionComplex *option, QPainter *painter, const QWidget *widget) const
 {
     if (!option) {
-        qCWarning(KLASSY) << "Style::drawScrollBarComplexControl: Style can't draw scrollbar without options";
+        qCWarning(HELIUM) << "Style::drawScrollBarComplexControl: Style can't draw scrollbar without options";
         return true;
     }
     // the animation for QStyle::SC_ScrollBarGroove is special: it will animate

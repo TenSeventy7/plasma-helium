@@ -7,9 +7,9 @@
 
 #pragma once
 
-#define KLASSY_DECORATION_DEBUG_MODE 0
-#define KLASSY_STYLE_DEBUG_MODE 0
-#define KLASSY_QDEBUG_OUTPUT_PATH_RELATIVE_HOME "/Desktop/klassy_debug.txt"
+#define HELIUM_DECORATION_DEBUG_MODE 0
+#define HELIUM_STYLE_DEBUG_MODE 0
+#define HELIUM_QDEBUG_OUTPUT_PATH_RELATIVE_HOME "/Desktop/helium_debug.txt"
 
 #include "breezecommon_export.h"
 #include "breezesettings.h"
@@ -26,7 +26,7 @@ namespace Breeze
 
 // COMMON-------------------------------------------------------------------
 
-QString BREEZECOMMON_EXPORT klassyLongVersion();
+QString BREEZECOMMON_EXPORT heliumLongVersion();
 
 //* standard pen widths
 struct BREEZECOMMON_EXPORT PenWidth {

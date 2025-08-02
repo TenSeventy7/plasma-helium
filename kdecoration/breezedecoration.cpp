@@ -9,7 +9,7 @@
 
 #include "breezedecoration.h"
 
-#if KLASSY_DECORATION_DEBUG_MODE
+#if HELIUM_DECORATION_DEBUG_MODE
 #include "setqdebug_logging.h"
 #endif
 
@@ -127,8 +127,6 @@ KSharedConfig::Ptr Decoration::s_kdeGlobalConfig = KSharedConfig::Ptr();
 using KDecoration3::ColorGroup;
 using KDecoration3::ColorRole;
 
-static std::mutex g_setGlobalLookAndFeelOptionsMutex;
-
 // cached shadow values
 static int g_sDecoCount = 0;
 static int g_shadowSizeEnum = InternalSettings::EnumShadowSize::ShadowLarge;
@@ -154,8 +152,8 @@ Decoration::Decoration(QObject *parent, const QVariantList &args)
     , m_overrideOutlineFromButtonAnimation(new QVariantAnimation(this))
 
 {
-#if KLASSY_DECORATION_DEBUG_MODE
-    setDebugOutput(KLASSY_QDEBUG_OUTPUT_PATH_RELATIVE_HOME);
+#if HELIUM_DECORATION_DEBUG_MODE
+    setDebugOutput(HELIUM_QDEBUG_OUTPUT_PATH_RELATIVE_HOME);
 #endif
     if (!s_kdeGlobalConfig) {
         s_kdeGlobalConfig = KSharedConfig::openConfig();
@@ -573,8 +571,6 @@ void Decoration::reconfigureMain(const bool noUpdateShadow)
 
     const KConfigGroup cg(s_kdeGlobalConfig, QStringLiteral("KDE"));
 
-    setGlobalLookAndFeelOptions(cg.readEntry("LookAndFeelPackage"));
-
     m_colorSchemeHasHeaderColor = KColorScheme::isColorSetSupported(s_kdeGlobalConfig, KColorScheme::Header);
 
     // m_toolsAreaWillBeDrawn = ( m_colorSchemeHasHeaderColor && ( settings()->borderSize() == KDecoration3::BorderSize::None || settings()->borderSize() ==
@@ -702,33 +698,6 @@ void Decoration::generateDecorationColorsOnSystemColorSettingsUpdate(QByteArray 
 
     updateDecorationColors(clientPalette, uuid);
     reconfigure();
-}
-
-void Decoration::setGlobalLookAndFeelOptions(QString lookAndFeelPackageName)
-{
-    if (lookAndFeelPackageName == m_internalSettings->lookAndFeelSet()) {
-        return;
-    }
-
-    // only allow one thread at a time to set the look-and-feel options
-    std::unique_lock<std::mutex> lock(g_setGlobalLookAndFeelOptionsMutex, std::try_to_lock);
-    if (lock.owns_lock()) {
-        m_internalSettings->setLookAndFeelSet(lookAndFeelPackageName);
-        m_internalSettings->save();
-
-        // associate the look-and-feel package with a Klassy window decoration preset
-        const QHash<QString, QString> lfPackagePresetNames{
-            {QStringLiteral("org.kde.klassykisweetdarkleftpanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.klassykisweetlightleftpanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.klassykisweetdarkbottompanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.klassykisweetlightbottompanel.desktop"), QStringLiteral("Kisweet")},
-        };
-
-        auto presetNameIt = lfPackagePresetNames.find(lookAndFeelPackageName);
-        if (presetNameIt != lfPackagePresetNames.end()) { // if matching look-and-feel-package, load the associated Klassy window decoration preset
-            system("klassy-settings -w \"" + presetNameIt.value().toUtf8() + "\" &");
-        }
-    }
 }
 
 //________________________________________________________________
@@ -1482,7 +1451,7 @@ void Decoration::updateShadow(const bool forceUpdateCache, bool noCache, const b
     // if the decoration is painting, abandon setting the shadow.
     // Setting the shadow at the same time as paint() being executed causes a EGL_BAD_SURFACE error and a SEGFAULT from Plasma 5.26 onwards.
     if (m_painting) {
-        qWarning("Klassy: paint() occurring at same time as shadow creation for \"%s\" - abandoning setting shadow to prevent EGL_BAD_SURFACE.",
+        qWarning("Helium: paint() occurring at same time as shadow creation for \"%s\" - abandoning setting shadow to prevent EGL_BAD_SURFACE.",
                  c->caption().toLatin1().data());
         return;
     }

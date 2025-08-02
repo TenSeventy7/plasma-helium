@@ -34,13 +34,13 @@ ki18n_wrap_ui(breezedecoration_config_SRCS
    ui/shadowstyle.ui
 )
 
-qt6_add_resources(breezedecoration_config_SRCS ui/klassydecoration_config.qrc)
+qt6_add_resources(breezedecoration_config_SRCS ui/heliumdecoration_config.qrc)
 
-kcoreaddons_add_plugin(kcm_klassydecoration SOURCES kcm_breezedecoration.cpp ${breezedecoration_config_SRCS} INSTALL_NAMESPACE "${KDECORATION_KCM_PLUGIN_DIR}")
+kcoreaddons_add_plugin(kcm_heliumdecoration SOURCES kcm_breezedecoration.cpp ${breezedecoration_config_SRCS} INSTALL_NAMESPACE "${KDECORATION_KCM_PLUGIN_DIR}")
 #This is removed as kdecoration InternalSettings is now generated from libbreezecommon
-#kconfig_add_kcfg_files(klassydecoration_STATIC breezesettings.kcfgc)
-target_include_directories(kcm_klassydecoration PRIVATE ${CMAKE_SOURCE_DIR}/kdecoration ${CMAKE_BINARY_DIR}/kdecoration/)
-target_link_libraries(kcm_klassydecoration
+#kconfig_add_kcfg_files(heliumdecoration_STATIC breezesettings.kcfgc)
+target_include_directories(kcm_heliumdecoration PRIVATE ${CMAKE_SOURCE_DIR}/kdecoration ${CMAKE_BINARY_DIR}/kdecoration/)
+target_link_libraries(kcm_heliumdecoration
     PUBLIC
         Qt6::Core
         Qt6::Gui
@@ -55,10 +55,10 @@ target_link_libraries(kcm_klassydecoration
         KF6::IconThemes
         KF6::WindowSystem
         KF6::KCMUtils
-        klassycommon6
+        heliumcommon6
 )
 
-kcmutils_generate_desktop_file(kcm_klassydecoration)
+kcmutils_generate_desktop_file(kcm_heliumdecoration)
 
 #install bundled presets
-install(DIRECTORY presets  DESTINATION  ${KDE_INSTALL_QTPLUGINDIR}/org.kde.kdecoration3.kcm/klassydecoration)
+install(DIRECTORY presets  DESTINATION  ${KDE_INSTALL_QTPLUGINDIR}/org.kde.kdecoration3.kcm/heliumdecoration)

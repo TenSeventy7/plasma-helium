@@ -30,19 +30,19 @@ namespace Breeze
 //__________________________________________________________________
 StyleConfig::StyleConfig(QWidget *parent)
     : QWidget(parent)
-    , _configuration(KSharedConfig::openConfig(QStringLiteral("klassy/klassyrc")))
+    , _configuration(KSharedConfig::openConfig(QStringLiteral("helium/heliumrc")))
 {
     // this is a hack to get an Apply button
     QDialog *parentDialog = qobject_cast<QDialog *>(parent);
     if (parentDialog && QCoreApplication::applicationName() == QStringLiteral("systemsettings")) {
         parentDialog->close();
-        system("kcmshell6 kstyle_config/klassystyleconfig &");
+        system("kcmshell6 kstyle_config/heliumstyleconfig &");
     }
 
     setupUi(this);
 
-    // hide the title if not klassy-settings
-    if (this->window() && qAppName() != QStringLiteral("klassy-settings")) {
+    // hide the title if not helium-settings
+    if (this->window() && qAppName() != QStringLiteral("helium-settings")) {
         KPageWidget *kPageWidget = this->window()->findChild<KPageWidget *>();
         if (kPageWidget) {
             KPageWidgetItem *currentPage = kPageWidget->currentPage();
@@ -52,14 +52,14 @@ StyleConfig::StyleConfig(QWidget *parent)
         }
     }
 
-#if KLASSY_GIT_MASTER
+#if HELIUM_GIT_MASTER
     // set the long version string if from the git master
-    _version->setText("v" + QString(KLASSY_VERSION) + ".git");
+    _version->setText("v" + QString(HELIUM_VERSION) + ".git");
 
 #else
     // set shortened version string in UI if an official release
     QRegularExpression re("\\d+\\.\\d+");
-    QRegularExpressionMatch match = re.match(KLASSY_VERSION);
+    QRegularExpressionMatch match = re.match(HELIUM_VERSION);
     if (match.hasMatch()) {
         QString matched = match.captured(0);
         _version->setText("v" + matched);
