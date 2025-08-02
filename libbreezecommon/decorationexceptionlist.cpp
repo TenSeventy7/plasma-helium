@@ -10,9 +10,39 @@
 //////////////////////////////////////////////////////////////////////////////
 
 #include "decorationexceptionlist.h"
+#include <QVector>
 
 namespace Breeze
 {
+
+struct DefaultExceptionData {
+    int propertyType;
+    QString propertyPattern;
+    QString programNamePattern;
+    bool opaqueTitleBar;
+    bool preventApplyOpacityToHeader;
+    int borderSize;
+    bool enabled;
+    bool exceptionBorder;
+    QString exceptionPreset;
+    bool hideTitleBar;
+};
+
+const QVector<DefaultExceptionData> hardcodedExceptions =
+{
+    {
+        InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName,
+        "",                 // propertyPattern
+        "VirtualBox.*",     // programNamePattern
+        false,              // opaqueTitleBar
+        true,               // preventApplyOpacityToHeader
+        0,                  // borderSize
+        true,               // enabled
+        false,              // exceptionBorder
+        "",                 // exceptionPreset
+        false               // hideTitleBar
+    },
+};
 
 //______________________________________________________________
 void DecorationExceptionList::readConfig(KSharedConfig::Ptr config, const bool readDefaults)
@@ -20,14 +50,21 @@ void DecorationExceptionList::readConfig(KSharedConfig::Ptr config, const bool r
     _exceptions.clear();
     _defaultExceptions.clear();
 
-    // set the default exceptions that are bundled with Klassy
-    InternalSettingsPtr defaultException0(new InternalSettings());
-    defaultException0->setExceptionWindowPropertyType(InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName);
-    defaultException0->setExceptionWindowPropertyPattern("");
-    defaultException0->setOpaqueTitleBar(false);
-    defaultException0->setExceptionProgramNamePattern("VirtualBox.*");
-    defaultException0->setPreventApplyOpacityToHeader(true);
-    _defaultExceptions.append(defaultException0);
+    // Loop through the hardcoded exceptions and populate the _defaultExceptions list
+    for (const auto &data : hardcodedExceptions) {
+        InternalSettingsPtr defaultException(new InternalSettings());
+        defaultException->setExceptionWindowPropertyType(data.propertyType);
+        defaultException->setExceptionWindowPropertyPattern(data.propertyPattern);
+        defaultException->setExceptionProgramNamePattern(data.programNamePattern);
+        defaultException->setOpaqueTitleBar(data.opaqueTitleBar);
+        defaultException->setPreventApplyOpacityToHeader(data.preventApplyOpacityToHeader);
+        defaultException->setBorderSize(data.borderSize);
+        defaultException->setEnabled(data.enabled);
+        defaultException->setExceptionBorder(data.exceptionBorder);
+        defaultException->setExceptionPreset(data.exceptionPreset);
+        defaultException->setHideTitleBar(data.hideTitleBar);
+        _defaultExceptions.append(defaultException);
+    }
 
     QString groupName;
 
