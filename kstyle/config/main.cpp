@@ -74,7 +74,7 @@ CommandLineProcessResult processComandLine(QApplication &app, QCommandLineParser
 
     QCommandLineOption importOption(QStringList() << "i"
                                                   << "import-preset",
-                                    i18n("Import a Helium .helium-deco Preset File with filename <preset filename>."),
+                                    i18n("Import a Helium .helium-deco Preset or Klassy .klpw File with filename <preset filename>."),
                                     i18n("preset filename"));
     parser.addOption(importOption);
 

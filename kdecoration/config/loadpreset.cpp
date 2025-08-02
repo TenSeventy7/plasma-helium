@@ -144,7 +144,7 @@ void LoadPreset::removeButtonClicked()
 
 void LoadPreset::importButtonClicked()
 {
-    QStringList files = QFileDialog::getOpenFileNames(this, i18n("Select Helium Preset to Import"), "", i18n("Helium Preset (*.helium-deco)"));
+    QStringList files = QFileDialog::getOpenFileNames(this, i18n("Select Helium Preset to Import"), "", i18n("Helium Preset (*.helium-deco);;Klassy Preset (*.klpw)"));
     for (QString filePath : files) {
         QString presetName;
         QString error;

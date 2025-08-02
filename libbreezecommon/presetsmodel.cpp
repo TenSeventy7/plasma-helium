@@ -302,9 +302,18 @@ PresetsModel::importPreset(KConfig *presetsConfig, const QString &filePath, QStr
         return PresetsErrorFlag::InvalidGlobalGroup;
 
     // perform validation first
-    if (!(importPresetConfig->hasGroup("Helium Window Decoration Preset File")))
+    if (!(importPresetConfig->hasGroup("Helium Window Decoration Preset File")) && !(importPresetConfig->hasGroup("Klassy Window Decoration Preset File")))
         return PresetsErrorFlag::InvalidGlobalGroup;
-    KConfigGroup importGlobalGroup = importPresetConfig->group("Helium Window Decoration Preset File");
+
+    KConfigGroup importGlobalGroup;
+    if (importPresetConfig->hasGroup("Helium Window Decoration Preset File")) {
+        importGlobalGroup = importPresetConfig->group("Helium Window Decoration Preset File");
+    } else if (importPresetConfig->hasGroup("Klassy Window Decoration Preset File")) {
+        importGlobalGroup = importPresetConfig->group("Klassy Window Decoration Preset File");
+    } else {
+        return PresetsErrorFlag::InvalidGlobalGroup;
+    }
+
     QString importVersion = importGlobalGroup.readEntry("version");
     bool versionValid = (importVersion == heliumLongVersion());
     if (!versionValid && !forceInvalidVersion)
